@@ -9,7 +9,7 @@ module TimeMachine exposing
   , mayRedo
   )
 
-{-| This module empower any model to undo/redo in elm architecture way.
+{-| This module empower any model to undo/redo feature in the elm architecture way.
 
 # Types
 
@@ -35,6 +35,8 @@ module TimeMachine exposing
 -- Types
 
 
+{-| Main data type to hold time machine state.
+-}
 type TimeMachine a = TimeMachine
     { current : a
     , past : List a
