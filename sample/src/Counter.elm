@@ -1,26 +1,24 @@
 module Counter exposing (..)
 
 import Html exposing (..)
-import Html.App as App
 import Html.Attributes exposing (..)
 import Html.Events exposing (..)
-
 
 
 -- MODEL
 
 
 type alias Model =
-  { counter : Int
-  }
-
-
-init : (Model, Cmd Msg)
-init =
-  ( { counter = 0
+    { counter : Int
     }
-  , Cmd.none
-  )
+
+
+init : ( Model, Cmd Msg )
+init =
+    ( { counter = 0
+      }
+    , Cmd.none
+    )
 
 
 
@@ -28,26 +26,26 @@ init =
 
 
 type Msg
-  = Increment
-  | Decrement
+    = Increment
+    | Decrement
 
 
-update : Msg -> Model -> (Model, Cmd Msg)
+update : Msg -> Model -> ( Model, Cmd Msg )
 update message model =
-  case message of
-    Increment ->
-      ( { model
-        | counter = model.counter + 1
-        }
-      , Cmd.none
-      )
+    case message of
+        Increment ->
+            ( { model
+                | counter = model.counter + 1
+              }
+            , Cmd.none
+            )
 
-    Decrement ->
-      ( { model
-        | counter = model.counter - 1
-        }
-      , Cmd.none
-      )
+        Decrement ->
+            ( { model
+                | counter = model.counter - 1
+              }
+            , Cmd.none
+            )
 
 
 
@@ -56,25 +54,25 @@ update message model =
 
 view : Model -> Html Msg
 view model =
-  div [class "container"]
-    [ div [class "counter"]
-      [ text <| toString model.counter
-      ]
-    , div [class "increment"]
-      [ button
-        [ type' "button"
-        , onClick Increment
+    div [ class "container" ]
+        [ div [ class "counter" ]
+            [ text <| toString model.counter
+            ]
+        , div [ class "increment" ]
+            [ button
+                [ type_ "button"
+                , onClick Increment
+                ]
+                [ text "+" ]
+            ]
+        , div [ class "decrement" ]
+            [ button
+                [ type_ "button"
+                , onClick Decrement
+                ]
+                [ text "-" ]
+            ]
         ]
-        [ text "+" ]
-      ]
-    , div [class "decrement"]
-      [ button
-        [ type' "button"
-        , onClick Decrement
-        ]
-        [ text "-" ]
-      ]
-    ]
 
 
 
@@ -82,4 +80,5 @@ view model =
 
 
 subscriptions : Model -> Sub Msg
-subscriptions model = Sub.none
+subscriptions model =
+    Sub.none
