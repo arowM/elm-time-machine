@@ -1,5 +1,5 @@
 {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "summary": "A module empowering any model to undo/redo in elm architecture way",
     "repository": "https://github.com/arowM/elm-time-machine.git",
     "license": "BSD3",
